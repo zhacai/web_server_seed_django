@@ -1,0 +1,13 @@
+kind: pipeline
+name: deploy
+
+steps:
+- name: build
+  commands:
+  - echo "hello" >> tmp.log
+
+trigger:
+  branch:
+  - master
+  event:
+  - push
