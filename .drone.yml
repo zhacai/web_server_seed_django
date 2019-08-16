@@ -6,6 +6,10 @@ steps:
     image: node:10  
     commands:  
       - node test/index.js  
+      - echo "hello" >> tmp.log
     when:  
       branch: master  
       event: push  
+  - name: build  
+    commands:  
+      - echo "world" >> tmp.log
