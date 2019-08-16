@@ -10,6 +10,3 @@ steps:
     when:  
       branch: master  
       event: push  
-  - name: build  
-    commands:  
-      - echo "world-" >> tmp.log
