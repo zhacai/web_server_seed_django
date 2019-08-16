@@ -1,13 +1,11 @@
-kind: pipeline
-name: deploy
-
-steps:
-- name: build
-  commands:
-  - echo "hello1" >> tmp.log
-
-trigger:
-  branch:
-  - master
-  event:
-  - push
+kind: pipeline  
+name: deploy  
+  
+steps:  
+  - name: unit-test  
+    image: node:10  
+    commands:  
+      - node test/index.js  
+    when:  
+      branch: master  
+      event: push  
