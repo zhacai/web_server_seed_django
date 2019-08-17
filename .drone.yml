@@ -2,17 +2,25 @@ kind: pipeline
 name: deploy  
   
 steps:  
-  - name: unit-test  
+  - name: build  
     image: node:10  
+    volumes:
+      - name: code
+        path: /code
     commands:  
-      - echo "hello" >> tmp.log
+      - /bin/sh echo "hello" >> tmp.log
     when:  
       branch: master  
       event: push  
   - name: build  
     image: node:10  
     commands:  
-      - echo $(pwd) >> tmp.log
+      - /bin/sh echo $(pwd) >> tmp.log
     when:  
       branch: master  
       event: push 
+
+volumes:
+  - name: code
+    host:
+      path: /var/lib/drone/
