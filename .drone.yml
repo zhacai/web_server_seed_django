@@ -8,16 +8,16 @@ steps:
       - name: code
         path: /code
     commands:  
-      - /bin/sh echo "hello1" >> tmp.log
-      - /bin/sh cp -rf * /code/
+      - echo "hello1" >> tmp.log
+      - cp -rf * /code/
     when:  
       branch: master  
       event: push  
   - name: build_b  
     image: node:10  
     commands:  
-      - /bin/sh echo $(pwd) >> tmp2.log
-      - /bin/sh cp -rf * /code/
+      - echo $(pwd) >> tmp2.log
+      - cp -rf * /code/
 
     when:  
       branch: master  
