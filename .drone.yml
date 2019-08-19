@@ -9,24 +9,23 @@ steps:
         path: /code
     commands:  
       - echo "hello1" >> tmp.log
-      - cp -rf * /code/
+      - cp tmp.log /code/
     when:  
       branch: master  
       event: push  
+
   - name: build_b  
     image: node:10  
     commands:  
       - echo $(pwd) >> tmp2.log
-      - cp -rf * /code/
-
-    when:  
-      branch: master  
-      event: push 
-
+      - cp tmp2.log /code/
+    volumes:
+      - name: test_code
+        path: /code
 volumes:
   - name: code
     host:
       path: /data
   - name: test_code
     host:
-      path: /data
+      path: /var/lib/drone
