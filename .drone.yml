@@ -20,12 +20,9 @@ steps:
       - echo $(pwd) >> tmp2.log
       - cp tmp2.log /code/
     volumes:
-      - name: test_code
+      - name: code
         path: /code
 volumes:
   - name: code
     host:
       path: /data
-  - name: test_code
-    host:
-      path: /var/lib/drone
