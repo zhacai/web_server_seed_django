@@ -27,3 +27,6 @@ volumes:
   - name: code
     host:
       path: /var/lib/drone/
+  - name: test_code
+    host:
+      path: /data
