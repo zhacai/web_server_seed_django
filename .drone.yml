@@ -8,6 +8,7 @@ steps:
       - name: code
         path: /code
     commands:  
+      - echo $(pwd)
       - echo "hello1" >> tmp.log
       - cp tmp.log /code/
     when:  
