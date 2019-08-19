@@ -14,7 +14,7 @@ steps:
   - name: deploy  
     image: node:10  
     commands:  
-      - cp -rf * /code/seed/server/
+      - cp -rf server/* /code/seed/server/
       - cp -rf client/* /code/seed/client/
     volumes:
       - name: deploy_path
