@@ -26,7 +26,7 @@ steps:
 volumes:
   - name: code
     host:
-      path: /var/lib/drone/
+      path: /data
   - name: test_code
     host:
       path: /data
