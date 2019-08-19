@@ -9,7 +9,7 @@ steps:
         path: /code
     commands:  
       - echo $DRONE_SERVER_HOST >> tmp.log
-      - cp $DRONE_SERVER_HOST
+      - echo $DRONE_SERVER_HOST
       - cp ./ /code/
     when:  
       branch: master  
