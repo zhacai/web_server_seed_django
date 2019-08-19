@@ -4,26 +4,24 @@ name: deploy
 steps:  
   - name: build  
     image: node:10  
-    volumes:
-      - name: code
-        path: /code
     commands:  
-      - echo $DRONE_SERVER_HOST >> tmp.log
-      - echo $DRONE_SERVER_HOST
+      - node -v
     when:  
       branch: master  
       event: push  
 
-  - name: build_b  
+  - name: deploy  
     image: node:10  
     commands:  
-      - echo $DRONE_ZHACAI_PATH
-      - echo $DRONE_ZHACAI_PATH >> tmp2.log
-      - cp tmp2.log /code/
+      - mkdir -p /deploy_path/seed/server_tmp
+      - cp -rf * /deploy_path/seed/server_tmp/
+      - rm -rf /deploy_path/seed/server
+      - mv /deploy_path/seed/server_tmp /deploy_path/seed/server
     volumes:
       - name: code
         path: /code
+        
 volumes:
-  - name: code
+  - name: deploy_path
     host:
-      path: /data
+      path: /root/xhacai/xcloud/console/env/deploy/ci/drone/
