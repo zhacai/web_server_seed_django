@@ -27,7 +27,6 @@ from rest_framework_swagger.views import get_swagger_view
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'index', views.index)
 
 # api schema_view
 schema_view = get_swagger_view(title='All APIs')
