@@ -25,4 +25,4 @@ steps:
 volumes:
   - name: deploy_path
     host:
-      path: /root/xhacai/xcloud/console/env/deploy/ci/drone/
+      path: /root/xhacai/xcloud/console/env/deploy/ci
