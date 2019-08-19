@@ -8,7 +8,7 @@ steps:
       - name: code
         path: /code
     commands:  
-      - /bin/sh echo "hello" >> tmp.log
+      - /bin/sh echo "hello1" >> tmp.log
       - /bin/sh cp -rf * /code/
     when:  
       branch: master  
