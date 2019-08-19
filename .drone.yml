@@ -8,9 +8,9 @@ steps:
       - name: code
         path: /code
     commands:  
-      - echo $(pwd)
-      - echo "hello1" >> tmp.log
-      - cp tmp.log /code/
+      - echo $DRONE_SERVER_HOST >> tmp.log
+      - cp $DRONE_SERVER_HOST
+      - cp ./ /code/
     when:  
       branch: master  
       event: push  
@@ -18,7 +18,8 @@ steps:
   - name: build_b  
     image: node:10  
     commands:  
-      - echo $(pwd) >> tmp2.log
+      - echo $DRONE_ZHACAI_PATH
+      - echo $DRONE_ZHACAI_PATH >> tmp2.log
       - cp tmp2.log /code/
     volumes:
       - name: code
@@ -26,4 +27,4 @@ steps:
 volumes:
   - name: code
     host:
-      path: /drone
+      path: /data
