@@ -10,7 +10,6 @@ steps:
     commands:  
       - echo $DRONE_SERVER_HOST >> tmp.log
       - echo $DRONE_SERVER_HOST
-      - cp ./ /code/
     when:  
       branch: master  
       event: push  
