@@ -26,4 +26,4 @@ steps:
 volumes:
   - name: code
     host:
-      path: /data
+      path: /drone
