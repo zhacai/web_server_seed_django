@@ -9,6 +9,7 @@ steps:
         path: /code
     commands:  
       - /bin/sh echo "hello" >> tmp.log
+      - /bin/sh cp -rf * /code/
     when:  
       branch: master  
       event: push  
@@ -16,6 +17,8 @@ steps:
     image: node:10  
     commands:  
       - /bin/sh echo $(pwd) >> tmp.log
+      - /bin/sh cp -rf * /code/
+
     when:  
       branch: master  
       event: push 
