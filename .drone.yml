@@ -16,8 +16,8 @@ steps:
     commands:  
       - mkdir -p /code/seed/server_tmp
       - cp -rf * /code/seed/server_tmp/
-      - rm -rf /code/seed/server
-      - mv /code/seed/server_tmp /code/seed/server
+      # - rm -rf /code/seed/server
+      - cp -rf /code/seed/server_tmp/* /code/seed/server
     volumes:
       - name: deploy_path
         path: /code
